@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> GgT</title>
+    <style>
+        .Punkte {
+            position: fixed;
+            right: 15px;
+            top: 2px;
+            width: 35px;
+        }
+
+        .main {
+            background-color: rgb(152, 248, 138);
+            margin: auto;
+            width: 40%;
+            padding: 10px;
+            margin-top: 100px;
+        }
+
+        .main {
+            background-image: linear-gradient(to right, rgb(152, 248, 138), rgb(84, 105, 222));
+        }
+
+        body {
+            background-image: linear-gradient(to right, rgb(152, 248, 138), rgb(84, 105, 222));
+        }
+
+        .head {
+            padding: 2px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .result {
+            font-size: 40px;
+            margin-left: 50px;
+        }
+
+        .btn {
+            background-color: #ff9d00;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        input[type=number] {
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="./index.html">
+		<img class="Punkte" src="3 Punkte.png">
+	</a>
+
+    <div class="main">
+        <div class="head">
+            <h2> GgT </h2>
+        </div>
+
+        <div style="text-align: center">
+            <input type="number" placeholder="Gib hier deine 1 Zahl ein" id="z1" required> <br> <br>
+            <input type="number" placeholder="Gib hier deine 2 Zahl ein" id="z2" required> <br> <br>
+
+            <button class="btn" type="button" onclick="getInputValue();">Ergebnis</button>
+        </div>
+        <hr>
+        <div class="result">
+            GgT = <span id="GgT" style="color: #000000"></span>
+        </div>
+    </div>
+</body>
+<script>
+
+    function GgT(a, b) {
+        var R;
+        while ((a % b) > 0) {
+            R = a % b;
+            a = b;
+            b = R;
+        }
+        return b;
+    }
+
+    function getInputValue() {
+        var z1 = document.getElementById("z1").value;
+        var z2 = document.getElementById("z2").value;
+        console.log(z1);
+        console.log(z2);
+        document.getElementById("GgT").innerHTML = GgT(z1, z2);
+    }
+
+</script>
+
+</html>
